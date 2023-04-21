@@ -38,14 +38,28 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
 }
 
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.github.ahriman27'
+//                artifactId = 'custom-text-vj'
+//                version = '1.0'
+//            }
+//        }
+//    }
+//}
+
+publishing {
+    publications {
+        release(MavenPublication) {
+            groupId = 'com.github.ahriman27'
+            artifactId = 'custom-text-vj'
+            version = '6.0'
+
+            afterEvaluate {
                 from components.release
-                groupId = 'com.github.ahriman27'
-                artifactId = 'custom-text-vj'
-                version = '1.0'
             }
         }
     }
